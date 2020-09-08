@@ -31,7 +31,7 @@ function preload () {
 }
 
 function setup () {
-  let canvas = createCanvas(700, 700)
+  let canvas = createCanvas(600, 600)
   canvas.parent('sketch');
   blendMode(MULTIPLY)
   background(bg)

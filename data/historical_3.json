@@ -1,0 +1,171 @@
+{
+  "indicator": {
+    "default_units": "F",
+    "variables": ["tasmax"],
+    "valid_aggregations": [
+      "yearly",
+      "quarterly",
+      "monthly",
+      "offset_yearly",
+      "custom"
+    ],
+    "name": "average_high_temperature",
+    "description": "Aggregated average high temperature, generated from daily data using all requested models",
+    "label": "Average High Temperature",
+    "parameters": [
+      {
+        "default": "min,max,avg",
+        "name": "agg",
+        "description": "A list of comma separated aggregation types to return. Valid choices are 'min', 'max', 'avg', 'median', 'stddev', 'stdev', and 'XXth'. If using 'XXth', replace the XX with a number between 1-99 to return that percentile. For example, '99th' returns the value of the 99th percentile. The 'XXth' option can be provided multiple times with different values. 'stdev' is an alias to 'stddev'. Defaults to 'min,max,avg'.",
+        "required": false
+      },
+      {
+        "name": "custom_time_agg",
+        "description": "Used in conjunction with the 'custom' time_aggregation value. A list of comma separated month-day pairs defining the time intervals to aggregate within. Data points will only be assigned to one aggregation, and for overlapping intervals the interval defined first will take precedence. Dates are formmatted MM-DD and pairs are formatted 'start:end'. Examples: '3-1:5-31', '1-1:6-30,7-1:12-31'",
+        "required": false
+      },
+      {
+        "default": "NEX-GDDP",
+        "name": "dataset",
+        "description": "A single value defining which provider to use for raw climate data. If not provided, defaults to NEX-GDDP.",
+        "required": false
+      },
+      {
+        "default": "all",
+        "name": "models",
+        "description": "A list of comma separated model names to filter the indicator by. The indicator values in the response will only use the selected models. If not provided, defaults to all models.",
+        "required": false
+      },
+      {
+        "default": "yearly",
+        "name": "time_aggregation",
+        "description": "Time granularity to group data by for result structure. Valid aggregations depend on indicator. Can be 'yearly', 'offset_yearly', 'quarterly', 'monthly', or 'custom'. Defaults to 'yearly'. If 'custom', 'custom_time_agg' parameter must be set.",
+        "required": false
+      },
+      {
+        "default": "F",
+        "name": "units",
+        "description": "Units in which to return the data. Defaults to Imperial units (Fahrenheit for temperature indicators and inches for precipitation).",
+        "required": false
+      },
+      {
+        "default": "all",
+        "name": "years",
+        "description": "A list of comma separated year ranges to filter the response by. Defaults to all years available. A year range is of the form 'start[:end]'. Examples: '2010', '2010:2020', '2010:2020,2030', '2010:2020,2030:2040'",
+        "required": false
+      }
+    ],
+    "available_units": [
+      "F",
+      "C",
+      "K"
+    ]
+  },
+  "climate_models": [
+    "ACCESS1-0",
+    "bcc-csm1-1",
+    "BNU-ESM",
+    "CanESM2",
+    "CCSM4",
+    "CESM1-BGC",
+    "CNRM-CM5",
+    "CSIRO-Mk3-6-0",
+    "GFDL-CM3",
+    "GFDL-ESM2G",
+    "GFDL-ESM2M",
+    "inmcm4",
+    "IPSL-CM5A-LR",
+    "IPSL-CM5A-MR",
+    "MIROC5",
+    "MIROC-ESM",
+    "MIROC-ESM-CHEM",
+    "MPI-ESM-LR",
+    "MPI-ESM-MR",
+    "MRI-CGCM3",
+    "NorESM1-M"
+  ],
+  "data": {
+    "1976": {"max": 61.24240980174442},
+    "1975": {"max": 61.74961711726787},
+    "1974": {"max": 60.31020059663955},
+    "1973": {"max": 60.9227333884043},
+    "1972": {"max": 60.918194529912256},
+    "1971": {"max": 60.674568790801544},
+    "1970": {"max": 60.71608431881427},
+    "1979": {"max": 61.36742985137521},
+    "1978": {"max": 60.4749047684343},
+    "1977": {"max": 60.61883484722819},
+    "1990": {"max": 61.10618294493791},
+    "2001": {"max": 62.43721000775899},
+    "2000": {"max": 63.171619072585834},
+    "1987": {"max": 60.61581360699382},
+    "1986": {"max": 61.84358754615258},
+    "1985": {"max": 61.49291614271206},
+    "1984": {"max": 61.21174863721502},
+    "1983": {"max": 61.210987849823354},
+    "1982": {"max": 61.37562038473887},
+    "1981": {"max": 62.07299065576837},
+    "1980": {"max": 61.689040309958266},
+    "1989": {"max": 61.209982826546465},
+    "1988": {"max": 60.46311989980196},
+    "1954": {"max": 62.368067626953206},
+    "1998": {"max": 61.58882001484911},
+    "1953": {"max": 60.86485756233945},
+    "1997": {"max": 62.93821561630461},
+    "1952": {"max": 62.05493896484369},
+    "1996": {"max": 62.851881203573264},
+    "1951": {"max": 61.43565841047733},
+    "1995": {"max": 63.05482691098559},
+    "1950": {"max": 61.600711736809714},
+    "1994": {"max": 63.02304797864942},
+    "2005": {"max": 62.343125652156466},
+    "1993": {"max": 62.55762302346425},
+    "2004": {"max": 63.233045254066276},
+    "1992": {"max": 60.92446080942622},
+    "2003": {"max": 63.61124996655604},
+    "1991": {"max": 61.93461830452697},
+    "2002": {"max": 62.93261093348669},
+    "1959": {"max": 61.58670040600923},
+    "1958": {"max": 60.6913637260541},
+    "1957": {"max": 61.13085778641375},
+    "1956": {"max": 60.77709365635704},
+    "1955": {"max": 61.054821409460565},
+    "1999": {"max": 61.73439397942529},
+    "1965": {"max": 60.713182423212785},
+    "1964": {"max": 61.0872813440542},
+    "1963": {"max": 60.2503515959439},
+    "1962": {"max": 60.64291763096633},
+    "1961": {"max": 61.84848398705053},
+    "1960": {"max": 63.52595512494649},
+    "1969": {"max": 61.88785642859055},
+    "1968": {"max": 61.47650407346961},
+    "1967": {"max": 61.064411570927824},
+    "1966": {"max": 61.07015275511022}
+  },
+  "city": {
+    "geometry": {
+      "coordinates": [
+        -87.65005,
+        41.85003
+      ],
+      "type": "Point"
+    },
+    "id": 3,
+    "type": "Feature",
+    "properties": {
+      "proximity": {"ocean": false},
+      "name": "Chicago",
+      "admin": "IL",
+      "datasets": [
+        "LOCA",
+        "NEX-GDDP"
+      ],
+      "region": 26,
+      "population": 2720546
+    }
+  },
+  "scenario": "historical",
+  "units": "F",
+  "time_aggregation": "yearly",
+  "dataset": "NEX-GDDP"
+}

@@ -1,7 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* CSS reset (Eric Meyer)
+-----------------------------------*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,27 +45,36 @@ table {
 	border-spacing: 0;
 }
 
+/* Debug
+-----------------------------------*/
 
-/* =========================== */
+/*
+ ul, li, h3, h2, div, p, main {
+	border: 1px solid black;
+} 
+*/
+
+
+/* Typology
+-----------------------------------*/
 
 body {
     font-family: 'Roboto Mono', monospace;
-/*    background-image: url("assets/sand.jpg");*/
 }
 
 h1 {
 	font-weight: 700;
-	font-size: 38px;
+	font-size: 42px;
 }
 
 h6 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4em;
 }
 
 p {
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.4em;
 }
 
@@ -85,19 +92,22 @@ a:hover {
 }
 
 
+/* Large Deskstop Styles
+-----------------------------------*/
+
 .container {
     display: grid;
-    grid-template-rows: 70px auto;
+    grid-template-rows: 70px 1fr;
     grid-template-areas:
         "header"
         "main";
-    padding: 20px 50px;
+    padding: 20px 60px;
 }
 
 .header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 
 .home {
@@ -110,10 +120,109 @@ a:hover {
 
 .main {
     grid-area: main;
+}
+
+#sketch {
+    width: 60%;
     margin: 0 auto;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
 }
 
 .description {
     padding-top: 20px;
     padding-right: 25%;
+}
+
+
+/* Deskstop Styles
+-----------------------------------*/
+
+@media screen and (max-width: 1680px) {
+    
+    h1 {
+        font-size: 38px;
+    }
+    
+    h6 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+    
+    #sketch {
+        width: 65%;
+    }
+}
+
+
+/* Tablet Styles
+-----------------------------------*/
+
+@media screen and (max-width: 1000px) {
+       
+    h1 {
+        font-size: 28px;
+    }
+    
+    #sketch {
+        width: 90%;
+    }
+    
+    .description {
+        padding-right: 0;
+    }
+}
+
+/* Mobile Styles
+-----------------------------------*/
+
+@media screen and (max-width: 552px) {
+    
+    h1 {
+        font-size: 18px;
+    }
+    
+    h6 {
+        font-size: 12px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+    .container {
+        grid-template-rows: 20px 1fr;
+        padding: 8px 12px;
+    }
+    
+    .main {
+        padding-top: 10px;
+    }
+    
+    .description {
+        padding-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+    
+    h1 {
+        font-size: 14px;
+    }
+    
+    h6 {
+        font-size: 10px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+    
 }

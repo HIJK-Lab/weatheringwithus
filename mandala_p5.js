@@ -15,7 +15,7 @@ const revolution = 360
 let increment
 let counter = 0
 let previousMillis = 0
-const interval = 150 // Control speed of rotation here
+const interval = 300 // Control speed of rotation here
 
 let sw = 5 // Control strokeweight here
 let bg;

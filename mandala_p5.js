@@ -84,6 +84,7 @@ function draw () {
         angle += increment
 
         if (angle >= revolution - 1) { 
+//            saveCanvas('randomise', 'png');
             state = int(random(1,3))
 
             for (let i = 0; i < cities.length; i++) {
